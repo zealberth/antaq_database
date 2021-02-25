@@ -1,0 +1,10 @@
+01) Como você armazenaria os dados na camada Raw após coletá-los de suas fontes? Justifique.
+As bases da Receita Federal e ANTAQ podem ser armazenadas em um sistema de arquivos, já que são disponiblizados dessa maneira pelas fontes. É interessante armazená-los como são fornecidos para manter a integridade dos dados dentro do datalake. Como a base PIMPF fornece os dados via API, seria necessário analisar quais os formatos disponíveis pela API, mas independente do formato, é interessante que na camada Raw todos os dados estejam no seu formato bruto.
+
+
+02) Como você armazenaria os dados na camada de staging, onde estes serão transformados para a camada de consumo? Justifique.
+Possivelmente em uma base relacional, já tratanto alguns dados, tais como normalização de datas, valores, correções nos textos, criações de novos atributos, aplicação de máscaras, etc. 
+
+
+03) Como você armazenaria os dados na camada de consumo, levando em conta os usos primários de cada base? Justifique.
+Os dados podem continuar em uma base relacional, porém, com uma infraestrutura melhor, para garantir que os dados sejam consumidos com maior velocidade e eficiência. Nesta base relacional, é possível também criar diferentes views materializadas, para fornecer os dados de diferentes modos para diferentes aplicações, garantindo também a sua integridade.
